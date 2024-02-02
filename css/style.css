@@ -1,0 +1,72 @@
+body {
+  background-color: #121212;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.clock {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: relative;
+  background: #121212;
+  box-shadow: inset 5px 5px 11px #070707, inset -5px -5px 11px #1d1d1d;
+}
+.num {
+  padding: 10px;
+  --rotate: 0;
+  font-size: 2rem;
+  color: #e1f0da;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 0;
+  transform: rotate(calc(30deg * var(--rotate)));
+}
+.num > div {
+  transform: rotate(calc(30deg * var(--rotate) * -1));
+}
+
+.hand {
+  width: 10px;
+  height: 50%;
+  position: absolute;
+  background-color: #D4E7C5;
+  z-index: 2;
+  border-radius: 10px 10px 0 0;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%);
+  transform-origin: bottom;
+}
+
+.hand.min {
+  height: 40%;
+}
+.hand.sec {
+  height: 45%;
+  width: 5px;
+  z-index: 3;
+  background-color: #436850;
+}
+.hand.hour {
+  height: 35%;
+  background-color: #bfd8af;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border-radius: 50%;
+}
